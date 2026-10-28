@@ -24,37 +24,29 @@ int EditContactField(Record *contact, int fieldChoice, const char *newValue) {
     switch (fieldChoice) {
         case 1:
             strncpy(contact->firstName, newValue, MAX_FIELD_LEN - 1);
-            contact->firstName[MAX_FIELD_LEN - 1] = '\0';
             break;
         case 2:
             strncpy(contact->lastName, newValue, MAX_FIELD_LEN - 1);
-            contact->lastName[MAX_FIELD_LEN - 1] = '\0';
             break;
         case 3:
             strncpy(contact->patronymic, newValue, MAX_FIELD_LEN - 1);
-            contact->patronymic[MAX_FIELD_LEN - 1] = '\0';
             break;
         case 4:
             strncpy(contact->jobPlace, newValue, MAX_FIELD_LEN - 1);
-            contact->jobPlace[MAX_FIELD_LEN - 1] = '\0';
             break;
         case 5:
             strncpy(contact->post, newValue, MAX_FIELD_LEN - 1);
-            contact->post[MAX_FIELD_LEN - 1] = '\0';
             break;
         case 6:
             strncpy(contact->phoneNumber, newValue, PHONE_NUMBER_LEN - 1);
-            contact->phoneNumber[PHONE_NUMBER_LEN - 1] = '\0';
             break;
         case 7:
             strncpy(contact->mailAddress, newValue, MAX_FIELD_LEN - 1);
-            contact->mailAddress[MAX_FIELD_LEN - 1] = '\0';
             break;
         default:
             if (fieldChoice >= 8 && fieldChoice < 8 + MAX_PROFILES) {
                 int profileIndex = fieldChoice - 8;
                 strncpy(contact->profileAddresses[profileIndex], newValue, MAX_FIELD_LEN - 1);
-                contact->profileAddresses[profileIndex][MAX_FIELD_LEN - 1] = '\0';
             } else {
                 return -1; 
             }
