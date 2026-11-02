@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <string.h>
 #include <locale.h>
@@ -8,7 +9,8 @@
 
 int main(void)
 {
-    setlocale(LC_ALL,".UTF-8");
+    setlocale(LC_ALL, ".UTF-8");
+
     mode_t mode = 0;
     int initialized = 0;
     int choice;
@@ -19,15 +21,19 @@ int main(void)
     {
         printf("1. Ввести права доступа\n");
         printf("2. Получить права доступа файла\n");
-        printf("3. Изменить права доступа \n");
+        printf("3. Изменить права доступа\n");
         printf("0. Выход\n");
         printf("Выберите действие: ");
 
         if (scanf("%d", &choice) != 1)
         {
             printf("Ошибка ввода\n");
+
+            while (getchar() != '\n');
             continue;
         }
+
+        while (getchar() != '\n');
 
         if (choice == 0)
         {
@@ -72,6 +78,7 @@ int main(void)
                     printf("\nПрава доступа файла:\n");
                     print_permissions(mode);
                 }
+
                 break;
 
             case 3:
@@ -100,7 +107,7 @@ int main(void)
                 }
                 else
                 {
-                    printf("Некорректная команда или формат прав!\n");
+                    printf("Некорректная команда или формат прав\n");
                 }
 
                 break;

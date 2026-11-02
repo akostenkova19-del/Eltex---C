@@ -4,7 +4,7 @@
 
 #include <sys/types.h>
 
-int parse_permissions(const char*, mode_t);
+int parse_permissions(const char*, mode_t*);
 
 void print_permissions(mode_t);
 

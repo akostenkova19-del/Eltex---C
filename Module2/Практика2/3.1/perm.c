@@ -65,11 +65,11 @@ void print_permissions(mode_t mode)
 
     mode_to_symbolic(mode, symbolic);
 
-    printf("\nSymbols: %s\n", symbolic);
-    printf("Digits: %03o\n",
+    printf("\nСимвольное представление: %s\n", symbolic);
+    printf("Числовое представление: %03o\n",
            (unsigned int)mode);
 
-    printf("Binary:  ");
+    printf("Бинарное представление:  ");
 
     for (int i = 8; i >= 0; i--)
     {
